@@ -1,0 +1,9 @@
+ui-card{
+    width: 100%;
+    mat-card-title{
+        overflow: hidden;
+        height: 50px !important;
+        display: block;
+        text-overflow: ellipsis;
+    }
+}

@@ -1,0 +1,40 @@
+<div class="relative">
+    <ng-container *ngIf="characters$ | async as characters">
+        <ng-container *ngIf="characters.count; else noCharacters">
+            
+            <mat-grid-list [cols]="cols" [rowHeight]="110">
+                <ng-container *ngFor="let data of characters.results; let i = index;">
+                    <mat-grid-tile>
+                        <ui-card >
+                            <ui-card-header>
+                                <mat-card-title>{{ data.name }}</mat-card-title>
+                            </ui-card-header>    
+                        </ui-card>
+                        <!-- <mat-card>
+                            <mat-card-header>
+                                <mat-card-title>
+                                    {{data.name}}
+                                </mat-card-title>
+                                
+                            </mat-card-header>
+                        </mat-card> -->
+                    </mat-grid-tile>
+                </ng-container>
+            </mat-grid-list>
+           
+            <mat-paginator #paginator [length]="characters.count"
+              [pageSize]="10"
+              [pageSizeOptions]="[10]"
+              aria-label="Select page"
+              (page)="goPage($event.pageIndex + 1)"
+              >
+            </mat-paginator>
+
+        </ng-container>
+    </ng-container>
+
+     
+     <ng-template #noCharacters>
+        <div class="p-8 sm:p-16 border-t text-4xl font-semibold tracking-tight text-center">There are no characters available!</div>
+    </ng-template>
+</div>

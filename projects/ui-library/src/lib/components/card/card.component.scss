@@ -1,0 +1,79 @@
+@use 'sass:math';
+$padding: 16px !default;
+$margin: 8px !default;
+$border-radius: 4px !default;
+$header-size: 40px !default;
+
+%ui-card-section-base {
+    display: block;
+    margin-bottom: 18px;
+}
+
+.ui-card{
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 1px 3px 0 rgba(0,0,0,.12);
+    display: block;
+    padding: $padding;
+    border-radius: $border-radius;
+    margin: $margin;
+}
+
+.ui-card-title {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 21px;
+}
+  
+.ui-card-subtitle, .ui-card-content {
+    @extend %ui-card-section-base;
+    font-size: 16px;
+}
+
+.ui-card-title:not(:first-child), .ui-card-subtitle:not(:first-child) {
+    margin-top: -4px;
+}
+
+.ui-card-header .ui-card-subtitle:not(:first-child) {
+    margin-top: -8px;
+}
+
+.ui-card-subtitle, .ui-card-content {
+    display: block;
+    margin-bottom: $padding;
+}
+
+.ui-card-actions {
+    @extend %ui-card-section-base ;
+    margin-left: math.div(-$padding, 2);
+    margin-right: math.div(-$padding, 2);
+    padding: 8px 0;
+}
+
+.ui-card-actions-align-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ui-card-footer {
+    margin: 0 0 -26px 0;
+    display: block;
+}
+  
+.ui-card-actions {
+    .ui-button{
+      margin: 0 8px;
+    }
+}
+
+.ui-card-header {
+    
+    .ui-card-title {
+      margin-bottom: 12px;
+    }
+}
+
+.ui-card-header-text {
+    margin: 0 $padding;
+}
+  

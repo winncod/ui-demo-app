@@ -16,10 +16,17 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+    "strictPropertyInitialization": false,
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ui-library": [
+        "dist/ui-library/ui-library",
+        "dist/ui-library"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

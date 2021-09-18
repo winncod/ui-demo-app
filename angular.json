@@ -31,6 +31,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -99,9 +100,43 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "ui-library": {
+      "projectType": "library",
+      "root": "projects/ui-library",
+      "sourceRoot": "projects/ui-library/src",
+      "prefix": "lib",
+      
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ui-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-library/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ui-library/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production",
+          
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ui-library/src/test.ts",
+            "tsConfig": "projects/ui-library/tsconfig.spec.json",
+            "karmaConfig": "projects/ui-library/karma.conf.js"
           }
         }
       }
