@@ -3,9 +3,7 @@ import {
   ElementRef,
   HostListener,
   Inject,
-  Input,
-  OnDestroy,
-  Renderer2,
+  Input
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
@@ -19,7 +17,6 @@ export class RippleDirective {
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private element: ElementRef,
-    private renderer: Renderer2
   ) {
     element.nativeElement.style.position = 'relative';
     element.nativeElement.style.overflow = 'hidden';
@@ -45,11 +42,13 @@ export class RippleDirective {
     let circle = this.createRippleObject();
     _this.appendChild(circle);
     
-    let ratio = Math.max(_this.clientWidth, _this.clientHeight);
-
+    let ratio = Math.max(_this.clientWidth, _this.clientHeight) * 1.5;
+    let rect = _this.getBoundingClientRect();
+  
     circle.style.width = circle.style.height = ratio + 'px';
-    circle.style.left = event.clientX - _this.offsetLeft - ratio / 2 + 'px';
-    circle.style.top = event.clientY - _this.offsetTop - ratio / 2 + 'px';
+    circle.style.left = event.clientX - rect.left - ratio / 2 + 'px';
+    circle.style.top = event.clientY - rect.top - ratio / 2 + 'px';
+
     circle.classList.add('ripple');
   }
 

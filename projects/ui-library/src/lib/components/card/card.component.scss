@@ -16,6 +16,7 @@ $header-size: 40px !default;
     padding: $padding;
     border-radius: $border-radius;
     margin: $margin;
+    position: relative;
 }
 
 .ui-card-title {

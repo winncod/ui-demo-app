@@ -1,81 +1,85 @@
-<h3>Ripple Effect</h3>
-<div>
-  <a ui-ripple>
-    <span>GGG</span>
-    It's only a ripple effect to link
-  </a>
-  <p ui-ripple>
-    It's only a ripple effect to paragraph
-  </p>
-  <button ui-ripple>
-    It's only a ripple effect to button
-  </button>
-  
+<div class="box-demo">
+  <h3>Ripple Effect</h3>
+  <div>
+    <a ui-ripple>
+      <span>GGG</span>
+      It's only a ripple effect to link
+    </a>
+    <p ui-ripple>
+      It's only a ripple effect to paragraph
+    </p>
+    <button ui-ripple>
+      It's only a ripple effect to button
+    </button>
+    
+  </div>
 </div>
 
-<h3>Button & Cards</h3>
-<div>
-    
-  <ui-card>
-    <ui-card-header>
-      <ui-card-title>
-        Disabled and clear buttons
-      </ui-card-title>
-      <ui-card-subtitle>
-        Card with actions align to end 
-      </ui-card-subtitle>
-    </ui-card-header>
-    <ui-card-content>
-      <ui-button [disabled]="true">
-        This it a button disabled
-      </ui-button>
-      <ui-button color="clear">
-        This it a button clear
-      </ui-button>
-    </ui-card-content>
-    
-    <ui-card-footer>
-      <ui-card-actions [align]="'end'">
-        <ui-button color="primary">
-          Ok !
+<div class="box-demo">
+  <h3>Button & Cards</h3>
+  <div>
+    <ui-card>
+      <ui-card-header>
+        <ui-card-title>
+          Disabled and clear buttons on the content
+        </ui-card-title>
+        <ui-card-subtitle>
+          Card with actions align to end 
+        </ui-card-subtitle>
+      </ui-card-header>
+      <ui-card-content>
+        <ui-button [disabled]="true">
+          This it a button disabled
         </ui-button>
-        <ui-button color="danger">
-          Cancel !
+        <ui-button color="clear">
+          This it a button clear
         </ui-button>
-      </ui-card-actions>
-    </ui-card-footer>
-  </ui-card>
-  
-  <ui-card>
-    <ui-card-header>
-      <ui-card-title>
-        Disabled and clear buttons
-      </ui-card-title>
-      <ui-card-subtitle>
-        Card with actions align to end 
-      </ui-card-subtitle>
-    </ui-card-header>
-    <ui-card-content>
+      </ui-card-content>
       
-      <ui-button color="primary">
-        This it a button primary
-      </ui-button>
-      <ui-button color="danger">
-        This it a button danger
-      </ui-button>
-    </ui-card-content>
+      <ui-card-footer>
+        <ui-card-actions [align]="'end'">
+          <ui-button color="primary">
+            Ok !
+          </ui-button>
+          <ui-button color="danger">
+            Cancel !
+          </ui-button>
+        </ui-card-actions>
+      </ui-card-footer>
+    </ui-card>
     
-    <ui-card-footer>
-      <ui-card-actions>
+    <ui-card>
+      <ui-card-header>
+        <ui-card-title>
+          Primary & danger colors buttons 
+        </ui-card-title>
+        <ui-card-subtitle>
+          Card with actions align to start
+        </ui-card-subtitle>
+      </ui-card-header>
+      <ui-card-content>
+        
         <ui-button color="primary">
-          Ok !
+          This it a button primary
         </ui-button>
         <ui-button color="danger">
-          Cancel !
+          This it a button danger
         </ui-button>
-      </ui-card-actions>
-    </ui-card-footer>
-  </ui-card>
-    
+      </ui-card-content>
+      
+      <ui-card-footer>
+        <ui-card-actions>
+          <ui-button color="primary">
+            Ok !
+          </ui-button>
+          <ui-button color="danger">
+            Cancel !
+          </ui-button>
+        </ui-card-actions>
+      </ui-card-footer>
+    </ui-card>
+      
+  </div>
+  
 </div>
 
